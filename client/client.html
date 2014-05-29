@@ -27,6 +27,36 @@
     <button id="login-twitter">Twitter</button>
   {{/if}}
 
+  {{#if currentUser.services.github}}
+    <button id="login-github" disabled>Github</button>
+  {{else}}
+    <button id="login-github">Github</button>
+  {{/if}}
+
+  <form id="signup-password" action="action">
+    <div>
+      <input type="email" id="email" />
+      <input type="password" id="password" />
+      {{#if currentUser.emails}}
+        <button type="submit" id="login-button" value="Sign in" disabled>Sign Up</button>
+      {{else}}
+        <button type="submit" id="login-button" value="Sign in">Sign Up</button>
+      {{/if}}
+    </div>
+  </form>
+
+  <form id="login-password" action="action">
+    <div>
+      <input type="email" id="email-login" />
+      <input type="password" id="password-login" />
+        {{#if currentUser.emails}}
+          <button type="submit" id="login-button" value="Sign in" disabled>Log in</button>
+        {{else}}
+          <button type="submit" id="login-button" value="Sign in" >Log in</button>
+        {{/if}}
+    </div>
+  </form>
+
   {{#if currentUser}}
     <button id="logout">Logout</button>
   {{else}}
